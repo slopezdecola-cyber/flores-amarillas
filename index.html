@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Flores Amarillas</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+    font-family: Arial;
+  }
+
+  .flor {
+    font-size: 100px;
+    animation: brillo 2s infinite alternate;
+  }
+
+  @keyframes brillo {
+    from {
+      filter: drop-shadow(0 0 10px yellow);
+      transform: scale(1);
+    }
+    to {
+      filter: drop-shadow(0 0 40px gold);
+      transform: scale(1.1);
+    }
+  }
+
+  .texto {
+    margin-top: 20px;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: parpadeo 1.5s infinite;
+  }
+
+  @keyframes parpadeo {
+    0%,100% {opacity: 0.2;}
+    50% {opacity: 1;}
+  }
+</style>
+</head>
+<body>
+
+<div class="flor" onclick="iniciar()">🌻</div>
+<div class="texto">Toca para iniciar</div>
+
+<script>
+function iniciar() {
+  document.body.innerHTML = `
+    <h1 style="color:yellow;">🌼 Para ti 💛 🌼</h1>
+    <p>Estas flores son para alguien especial</p>
+  `;
+}
+</script>
+
+</body>
+</html>
